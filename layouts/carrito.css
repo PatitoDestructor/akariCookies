@@ -1,0 +1,329 @@
+:root {
+    --cafecito: #F1E2D1;
+    --rosadito: #DDB7AB;
+    --cafecito2: #D5BB9D;
+}
+
+/* Botón flotante */
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--rosadito);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+.floating-btn:hover {
+    background-color: #ddaa9b;
+}
+
+/* Panel lateral */
+.side-panel {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -4px 0 10px rgba(0,0,0,0.2);
+    transition: right 0.4s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cuando está activo */
+.side-panel.active {
+    right: 0;
+}
+
+.panel-header {
+    padding: 15px;
+    background-color: var(--rosadito);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.panel-header span {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.panel-content {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.cart-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+.cart-info {
+    flex: 1;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: red;
+}
+
+.cart-counter {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* Footer del carrito */
+.panel-footer {
+    padding: 15px;
+    background-color: var(--cafecito);
+    border-top: 1px solid #ddd;
+    text-align: left;
+    font-weight: bold;
+}
+
+.cart-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cart-actions button {
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 28px;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-actions button:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
+}
+
+.cart-actions .remove-btn {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.cart-actions .remove-btn:hover {
+    background-color: #e63939;
+}
+
+/* From Uiverse.io by nikk7007 */ 
+.bubbles {
+    --c1: white;
+    --c2: black;
+    --size-letter: 17px;
+    padding: 0.5em 1em;
+    font-size: var(--size-letter);
+    margin-top: 10px;
+    background-color: transparent;
+    border: calc(var(--size-letter) / 6) solid var(--c2);
+    border-radius: 0.2em;
+    cursor: pointer;
+    width: 200px;
+    overflow: hidden;
+    position: relative;
+    transition: 300ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.bubbles > .text {
+    font-weight: 700;
+    color: var(--c2);
+    position: relative;
+    z-index: 1;
+    transition: color 700ms cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+.bubbles::before {
+    top: 0;
+    left: 0;
+}
+
+.bubbles::after {
+    top: 100%;
+    left: 100%;
+}
+
+.bubbles::before,
+.bubbles::after {
+    content: "";
+    width: 150%;
+    aspect-ratio: 1/1;
+    scale: 0;
+    transition: 1000ms cubic-bezier(0.76, 0, 0.24, 1);
+
+    background-color: var(--c2);
+    border-radius: 50%;
+
+    position: absolute;
+    translate: -50% -50%;
+}
+
+.bubbles:hover {
+    & > span {
+        color: var(--c1);
+    }
+    &::before,
+    &::after {
+        scale: 1;
+    }
+}
+
+.bubbles:active {
+    scale: 0.98;
+    filter: brightness(0.9);
+}
+
+/*Modal*/
+/* Modal de Pago */
+.pay-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 2000; /* por encima del panel (999) y del botón flotante (1000) */
+}
+
+.pay-modal.open { display: block; }
+
+.pay-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  opacity: 0;
+  animation: fadeIn 200ms ease forwards;
+}
+
+.pay-dialog {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  width: 320px;
+  max-width: calc(100vw - 48px);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+  overflow: hidden;
+  transform: translateY(12px);
+  opacity: 0;
+  animation: slideUp 220ms cubic-bezier(.2,.8,.2,1) forwards;
+  font-family: inherit;
+}
+
+.pay-header {
+  background: var(--cafecito);
+  padding: 16px 20px;
+}
+
+.pay-header h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: #222;
+}
+
+.pay-subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.pay-body {
+  padding: 16px 20px 20px;
+}
+
+.pay-bullets {
+  margin: 0 0 14px;
+  padding-left: 18px;
+  color: #444;
+  font-size: 14px;
+}
+
+.pay-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.pay-wa-btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.pay-wa-btn:active { transform: translateY(0); }
+
+.pay-note {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: #777;
+}
+
+.pay-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: 0;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: #333;
+  opacity: .8;
+}
+.pay-close:hover { opacity: 1; }
+
+/* Animaciones */
+@keyframes fadeIn { to { opacity: 1; } }
+@keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+

@@ -1,0 +1,118 @@
+.noVisible{
+    display: none;
+}
+
+.sobreNosotros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.tituloNosotros{
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.descripcionNosotros{
+    font-size: 17px;
+    width: 650px;
+}
+
+.misionVision{
+    margin-top: 130px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    text-align: center;
+    padding: 30px;
+    gap: 50px;
+}
+.mision{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mision img{
+    width: 130px;
+}
+.tituloMisionVision{
+    font-size: 30px;
+    font-weight: bold;
+}
+.descripcionVision{
+    width: 500px;
+    margin-top: 20px;
+}
+
+.experiencias{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 150px;
+}
+.tituloExperiencias{
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.decripcionExperiencias{
+    width: 600px;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.containerExp{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 70px;
+}
+.experiencia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+.experiencia img{
+    width: 150px;
+    border-radius: 70%;
+    margin-bottom: 20px;
+}
+.expTitulo{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.ubicacion{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+    padding-right: 50px;
+    margin-bottom: 100px;
+}
+.ubicacionContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+.horario{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.tituloHorario{
+    font-size: 40px;
+    font-weight: bold;
+}
+.horarioItem{
+    font-size: 20px;
+    font-weight: bold;
+}

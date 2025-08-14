@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda || Akari Cookies</title>
+    <script src="javaScript/include.js"></script>
+    <script src="javascript/buscador.js" defer></script>
+    <script src="javascript/nav.js" defer></script>
+
+
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/tienda.css">
+    <link rel="stylesheet" href="layouts/loader.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="icon" type="image/png" href="media/logo.png">
+</head>
+<body>
+    
+    <div class="loaderContainer" id="loaderContainer">
+        <div class="item">
+            <div class="loader-pulse"></div>
+        </div>
+    </div>
+
+    <div id="nav"></div>
+    <div id="carrito"></div>
+
+    <section class="contendorCatalogo">
+        <span class="titulo">Elige tus <span class="rosadito">productos</span></span>
+
+        <div class="contendorProductos">
+
+            <div class="izquierda">
+                <span class="tituloFiltros">Filtros</span>
+                <div class="filtro-precio">
+                    <label for="priceRange">Filtrar por precio:</label>
+                    <input type="range" id="priceRange" min="0" max="40000" step="500" value="40000">
+                    <div class="price-display">
+                        <span>Hasta: $<span id="priceValue">40000</span></span>
+                    </div>
+                    <div class="contador-productos">
+                        <p id="productosCount" data-count="0">Mostrando 0 productos</p>
+                    </div>
+
+                    <button id="resetPrice" class="btn-reset">Restablecer</button>
+                </div>
+            </div>
+
+            <div class="derecha">
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto1.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">Galletas Centifolia</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$3000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto2.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">AÇAÍ Bowl</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$20000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto3.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">Macarrones Morani</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$8000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto4.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">Mini Torta Lavanda</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$35000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto5.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">Luxe Crumb</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$8000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">Cocoa Éclair</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$10000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto6.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">L'Alba Gourmet</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$30000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto7.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">Luna Brifonte</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$15000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto8.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">Velada Avocado</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$15000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto9.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">Café Paisita</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$10000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto10.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">Jazmín Noir</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$25000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto11.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">Té Hibisco Floral</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$18000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto12.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">Passiflora Maracuyá</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$18000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto13.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">Vainilla Luxe</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$18000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="badge"><i class="fa-solid fa-heart"></i></div>
+                <div class="tilt">
+                <div class="img"><img src="media/producto14.jpeg" alt="Premium Laptop"></div>
+                </div>
+                <div class="info">
+                <h2 class="title">Chocolate Royale</h2>
+                <div class="feats">
+                </div>
+                <div class="bottom">
+                <div class="price">
+                    <span class="new">$18000</span>
+                </div>
+                <button class="btn">
+                    <span>Agregar</span>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                    </svg>
+                </button>
+                </div>
+                <div class="meta">
+                <div class="stock">En Stock</div>
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Detalle Producto -->
+    <div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <div class="modal-body">
+        <!-- Imagen producto -->
+        <div class="modal-img">
+            <img src="" alt="Producto" id="modalImage">
+        </div>
+
+        <!-- Información producto -->
+        <div class="modal-info">
+            <h2 id="modalTitle">Título del Producto</h2>
+            <p class="modal-price" id="modalPrice">$0</p><br>
+
+            <label for="modalQty">Cantidad *</label>
+            <div class="quantity">
+            <button class="qty-btn" id="modalMinus">−</button>
+            <input type="number" id="modalQty" value="1" min="1">
+            <button class="qty-btn" id="modalPlus">+</button>
+            </div>
+
+            <button class="btnModal add-cart">Agregar al carrito</button>
+            <button class="btnModal buy-now">Realizar compra</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        // cargar nav y luego inicializar el buscador
+        incluirHTML("#nav", "layouts/nav.html")
+        incluirHTML("#footer", "layouts/footer.html");
+        incluirHTML("#carrito", "layouts/carrito.html");
+    </script>
+
+
+    <script>
+        AOS.init();
+    </script>
+    <script src="javascript/tienda.js"></script>
+    <script src="javascript/carrito.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="javascript/loader.js"></script>
+</body>
+</html>

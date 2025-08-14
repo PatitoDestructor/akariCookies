@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard | Akari Cookies</title>
+    <link rel="icon" type="image/png" href="media/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{
+        --bg:#faf9f8; --card:#ffffff; --ink:#1f2937; --muted:#6b7280; --brand:#DDB7AB; --brand-ink:#5f3b34; --chip:#f3e8ff;
+        --ok:#16a34a; --warn:#f59e0b; --shadow:0 8px 24px rgba(0,0,0,.08);
+        --radius:16px;
+        }
+        *{box-sizing:border-box}
+        html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;}
+        .wrap{max-width:1100px;margin:40px auto;padding:0 20px}
+        header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+        h1{font-size:28px;margin:0;font-weight:800}
+        .tag{padding:6px 10px;border-radius:999px;background:var(--chip);font-size:12px;color:#6b21a8;font-weight:600}
+        .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
+        .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+        .kpi{font-size:13px;color:var(--muted);margin-bottom:6px}
+        .kpi-number{font-size:28px;font-weight:800}
+        .section{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin-bottom:22px}
+        .section h2{margin:0 0 14px 0;font-size:20px}
+        .tools{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px}
+        .tools input[type="text"]{padding:10px 12px;border-radius:10px;border:1px solid #e5e7eb;min-width:240px}
+        .btn{border:0;border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:600}
+        .btn.primary{background:var(--brand);color:#fff}
+        .btn.ghost{background:#f3f4f6}
+        table{width:100%;border-collapse:collapse;border-spacing:0;font-size:14px}
+        th,td{padding:12px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+        th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);text-align:left}
+        .empty{padding:30px;text-align:center;color:var(--muted)}
+        .pill{display:inline-block;padding:2px 8px;border-radius:999px;background:#eef2ff;color:#3730a3;font-size:12px;font-weight:600}
+        .taller{font-weight:700}
+        .footer-note{font-size:12px;color:var(--muted);text-align:center;margin-top:18px}
+        @media (max-width:900px){.cards{grid-template-columns:1fr}}
+        #btnBack { transition: transform .2s ease; }
+        #btnBack:hover { transform: translateX(-2px); }
+    </style>
+    </head>
+    <body>
+    <div class="wrap">
+        <header>
+        <button class="btn ghost" id="btnBack">← Volver</button>
+        <h1>Dashboard de Gestión</h1>
+        <span class="tag">Akari Cookies</span>
+        </header>
+
+        <!-- KPIs -->
+        <div class="cards">
+        <div class="card">
+            <div class="kpi">Reservas totales</div>
+            <div class="kpi-number" id="kpiReservas">0</div>
+        </div>
+        <div class="card">
+            <div class="kpi">Inscritos a talleres</div>
+            <div class="kpi-number" id="kpiInscritos">0</div>
+        </div>
+        <div class="card">
+            <div class="kpi">Talleres distintos</div>
+            <div class="kpi-number" id="kpiTalleres">0</div>
+        </div>
+        </div>
+
+        <!-- RESERVAS -->
+        <section class="section">
+        <h2>Reservas</h2>
+        <div class="tools">
+            <input type="text" id="searchReservas" placeholder="Buscar por nombre, teléfono o fecha…">
+            <button class="btn ghost" id="exportReservas">Exportar CSV</button>
+        </div>
+        <div class="table-wrap">
+            <table id="tablaReservas">
+            <thead>
+                <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Teléfono</th>
+                <th>Fecha/Hora</th>
+                <th>Invitados</th>
+                <th>Creado</th>
+                </tr>
+            </thead>
+            <tbody><tr><td class="empty" colspan="6">Sin datos</td></tr></tbody>
+            </table>
+        </div>
+        </section>
+
+        <!-- TALLERES -->
+        <section class="section">
+        <h2>Inscripciones a talleres</h2>
+        <div class="tools">
+            <input type="text" id="searchTalleres" placeholder="Buscar por alumno, email o taller…">
+            <button class="btn ghost" id="exportTalleres">Exportar CSV</button>
+        </div>
+        <div class="table-wrap">
+            <table id="tablaTalleres">
+            <thead>
+                <tr>
+                <th>Taller</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Creado</th>
+                </tr>
+            </thead>
+            <tbody><tr><td class="empty" colspan="6">Sin datos</td></tr></tbody>
+            </table>
+        </div>
+        </section>
+
+        <div class="footer-note">Datos cargados desde localStorage del navegador.</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="javascript/dashboard.js"></script>
+</body>
+</html>

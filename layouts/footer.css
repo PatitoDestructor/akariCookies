@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Inter Tight", sans-serif;
+}
+
+:root {
+    --cafecito: #F1E2D1;
+    --rosadito: #DDB7AB;
+    --cafecito2: #D5BB9D;
+}
+
+.footer-container {
+    background-color: var(--cafecito2);
+    position: relative;
+}
+
+.footer-curve {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.footer-curve svg {
+    width: 100%;
+    height: 3rem; 
+}
+
+.footer-curve path {
+    fill: var(--cafecito);
+}
+
+.footer-content {
+    background-color: var(--cafecito);
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-grid {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 6rem; 
+    padding-right: 6rem;
+    display: grid;
+    gap: 6rem; /* gap-8 */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-links,
+.footer-contact {
+    font-size:  1.18rem; /* text-sm */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 50px;
+}
+
+.footer-link-item,
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-link-item span{
+    margin-bottom: 0px;
+}
+
+.footer-contact-item a, .footer-contact-item span{
+    text-decoration: none;
+    color: #000000;
+}
+
+.footer-red {
+    color: #020202; /* text-red-600 */
+    font-size: 1.2rem;
+    margin-left: 0.8rem;
+}
+
+.footer-redLocation{
+    font-size: 1.3rem;
+    color: #000000;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    width: 220px;
+    font-size: 2.3rem;
+}
+
+@media (min-width: 768px) {
+    .footer-socials {
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+}
+
+.footer-bottom {
+    background-color: rgb(26, 26, 26);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    margin-top: 1.5rem;
+}
+
+/*Social*/
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+.up {
+    display: flex;
+    flex-direction: row;
+    gap: 0.2em;
+}
+
+.down {
+    display: flex;
+    flex-direction: row;
+    gap: 0.2em;
+}
+
+.card1 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 90px 5px 5px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+}
+
+.instagram {
+    margin-top: 0.3em;
+    margin-left: 1.1em;
+    fill: #cc39a4;
+}
+
+.card2 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 90px 5px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+}
+
+.facebook {
+    margin-top: 0.3em;
+    margin-right: 1em;
+    fill: #1877F2;
+}
+
+.card3 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 5px 5px 90px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+}
+
+.github {
+    margin-top: -.6em;
+    margin-left: 1.2em;
+}
+
+.card4 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 5px 90px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+}
+
+.whatsapp {
+    margin-bottom: 0.5em;
+    margin-right: 1em;
+    fill: #25D366;
+}
+
+.card1:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #cc39a4;
+}
+
+.card1:hover .instagram {
+    fill: white;
+}
+
+.card2:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #0281bd;
+}
+
+.card2:hover .facebook {
+    fill: white;
+}
+
+.card3:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: black;
+}
+
+.card3:hover .github {
+    fill: white;
+}
+
+.card4:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #25D366;
+}
+
+.card4:hover .whatsapp {
+    fill: #03b645;
+}

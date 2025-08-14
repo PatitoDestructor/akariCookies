@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="layouts/carrito.css">
+</head>
+<body>
+<button id="toggle-panel" class="floating-btn">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="cart-counter" class="cart-counter">0</span>
+</button>
+
+<div id="side-panel" class="side-panel">
+    <div class="panel-header">
+        <h2>Carrito</h2>
+        <span id="close-panel">&times;</span>
+    </div>
+
+    <div class="panel-content">
+        <div id="cart-items"></div> <!-- aquí se pintan los items -->
+    </div>
+
+    <div class="panel-footer">
+        <h3 id="cart-total">Total: $0</h3>
+        <button class="bubbles">
+            <span class="text">Pagina de pago</span>
+        </button>
+
+    </div>
+</div>
+
+<!-- Modal de Pago -->
+    <div id="checkoutModal" class="pay-modal" aria-hidden="true">
+    <div class="pay-backdrop" data-close="true"></div>
+
+    <div class="pay-dialog" role="dialog" aria-modal="true" aria-labelledby="payTitle">
+        <button class="pay-close" aria-label="Cerrar" data-close="true">×</button>
+        <div class="pay-header">
+        <h3 id="payTitle">Finalizar compra</h3>
+        <p class="pay-subtitle">Para completar el pago, contáctanos por WhatsApp.</p>
+        </div>
+
+        <div class="pay-body">
+        <ul class="pay-bullets">
+            <li>Revisaremos tu pedido y coordinaremos el pago.</li>
+            <li>Horario de atención: 8:00 a 18:00</li>
+        </ul>
+
+        <a id="waBtn" class="pay-wa-btn" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> Ir a WhatsApp
+        </a>
+
+        <p class="pay-note">* Te llevaremos a una conversación con un asesor.</p>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
